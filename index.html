@@ -16,9 +16,8 @@
             text-align: center;
 
         }
-        .anime {
-            animation: swing; 
-            animation-duration: 3s; 
+        body {
+            background-image: url('https://picsum.photos/seed/picsum/400/600');
         }
     </style>
 
@@ -34,11 +33,8 @@
             body.innerHTML += `
                 <div id="conatiner" class="center-screen animate__animated animate__backInLeft">
                     <div>
-                        <p style="font-size:10em;margin:0;" id="greeting"> Hello ${person}</p>
+                        <p style="font-size:8em;margin:0;font-color:white;" id="greeting"> Hello ${person}</p>
                         <a style="display:none  " id="sms" href="sms:+13057266671&body=I%27d%20Like%20to%20do%20more%20than%20scan%20your%20leg%20-%20${person}">test</a>
-                    </div>
-                    <div>
-                        <img class="animate__animated anime" src="https://picsum.photos/seed/picsum/400/600" alt="">
                     </div>
                 </div>
                 `
