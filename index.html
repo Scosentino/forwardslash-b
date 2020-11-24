@@ -1,12 +1,38 @@
 <html>
     <head>
-
+        <title>You Scanned my Leg, Now What?</title>
     </head>
-    <body onload="script();">
-        <h1> Hello </h1>
+    <body id="parentId" onload="init();">
+        
+        
+        
+
+
         <script>
-            function script() {
+            function html(name) {
+            html = `
+                <div id="conatiner">
+                    <h1 id="greeting"> Hello </h1>
+                    <a id="sms" href="sms:+13057266671&Id%2520like%2520to%2520do%2520more%2520than%2520scan%2520your%2520leg%2520-%2520${name}"></a>
+                </div>
+            `
+            return html
+            }
+
+            function sendSms(name) {
+                document.getElementById('sms').click();
+            }
+            
+            function init() {
                 var person = prompt("What is your name?");
+                var body = document.body
+                body.innerHTML += `
+                <div id="conatiner">
+                    <h1 id="greeting"> Hello ${person}</h1>
+                    <a id="sms" href="sms:+13057266671&body=Id%2520like%2520to%2520do%2520more%2520than%2520scan%2520your%2520leg%2520-%2520${person}">test</a>
+                </div>
+                `
+                sendSms(person);
             }
         </script>
     </body>
