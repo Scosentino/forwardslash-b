@@ -1,39 +1,50 @@
 <html>
-    <head>
-        <title>You Scanned my Leg, Now What?</title>
-    </head>
-    <body id="parentId" onload="init();">
-        
-        
-        
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>You Scanned my Leg, Now What?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body id="parentId" onload="init();">
+    <style>
+        .center-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+        .anime {
+            animation: swing; 
+            animation-duration: 3s; 
+        }
+    </style>
 
 
-        <script>
-            function html(name) {
-            html = `
-                <div id="conatiner">
-                    <h1 id="greeting"> Hello </h1>
-                    <a id="sms" href="sms:+13057266671&Id%2520like%2520to%2520do%2520more%2520than%2520scan%2520your%2520leg%2520-%2520${name}"></a>
-                </div>
-            `
-            return html
-            }
+    <script>
+        function sendSms(name) {
+            document.getElementById('sms').click();
+        }
 
-            function sendSms(name) {
-                document.getElementById('sms').click();
-            }
-            
-            function init() {
-                var person = prompt("What is your name?");
-                var body = document.body
-                body.innerHTML += `
-                <div id="conatiner">
-                    <h1 id="greeting"> Hello ${person}</h1>
-                    <a id="sms" href="sms:+13057266671&body=I%27d%20Like%20to%20do%20more%20than%20scan%20your%20leg%20-%20${person}">test</a>
+        function init() {
+            var person = prompt("What is your name?");
+            var body = document.body
+            body.innerHTML += `
+                <div id="conatiner" class="center-screen animate__animated animate__backInLeft">
+                    <div>
+                        <p style="font-size:10em;margin:0;" id="greeting"> Hello ${person}</p>
+                        <a style="display:none  " id="sms" href="sms:+13057266671&body=I%27d%20Like%20to%20do%20more%20than%20scan%20your%20leg%20-%20${person}">test</a>
+                    </div>
+                    <div>
+                        <img class="animate__animated anime" src="https://picsum.photos/seed/picsum/400/600" alt="">
+                    </div>
                 </div>
                 `
-                sendSms(person);
-            }
-        </script>
-    </body>
+            sendSms(person);
+        }
+    </script>
+</body>
+
 </html>
