@@ -36,7 +36,7 @@
             if (person == 'cat') {
                 var location = prompt("Whatcha Looking for?");
                 var text = confirm("Do you want to text me?");
-                location = "http://www.google.com/search?q=" + location + "&btnI";
+                var modifiedLocation = "http://www.google.com/search?q=" + location + "&btnI";
             }
             var body = document.body
             body.innerHTML += `
@@ -58,7 +58,7 @@
                     <div class="row" style="width:100%">
                         <img style="height:200px" src="https://media.giphy.com/media/kDHzDtIciFQbdKHwdb/giphy.gif" alt="">
                         <div id="buttonDestination" style="display:none">
-                            <center><a class="btn btn-primary" href="${location}">Hope you find what youre looking for!</a></center>
+                            <center><a class="btn btn-primary" href="${modifiedLocation}">Hope you find what youre looking for!</a></center>
                         </div> 
                     </div>
                 </div>
