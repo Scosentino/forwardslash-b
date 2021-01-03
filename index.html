@@ -31,17 +31,11 @@
         }
 
         function init() {
-            var buttonVisible = document.getElementById("buttonDestination")
-            buttonVisible.style.display = "none"
             var person = prompt("What is your name?");
             if (person == 'cat') {
                 var location = prompt("Whats up Cat? Where ya going")
-                buttonVisible.style.display = "block";
-                return buttonVisible && location
-            } else if (person == '') {
-                person = prompt('Dude who are you?')
-                return person
-            };
+                location = 'https://' + location
+            }
             var body = document.body
             body.innerHTML += `
                 <div id="conatiner" class="center-screen animate__animated animate__backInLeft container">
@@ -58,15 +52,19 @@
                         <a style="display:none  " id="sms" href="sms:+13057266671&body=I%27d%20Like%20to%20do%20more%20than%20scan%20your%20leg%20-%20${person}">test</a>
                     </div>
                     <div class="row" style="height:200px">
-                        <div id="buttonDestination">
-                            <center><a href="${location}">Hope you find what youre looking for!</center>
-                        </div> 
                     </div>
                     <div class="row" style="width:100%">
                         <img style="height:200px" src="https://media.giphy.com/media/kDHzDtIciFQbdKHwdb/giphy.gif" alt="">
+                        <div id="buttonDestination" style="display:none">
+                            <center><button href="${location}">Hope you find what youre looking for!</button></center>
+                        </div> 
                     </div>
                 </div>
                 `
+            if (person == 'cat') {
+             var displayButton = document.getElementById('buttonDestination');
+             displayButton.style.display = "block";
+            };
             sendSms(person);
         }
     </script>
