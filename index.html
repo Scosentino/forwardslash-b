@@ -37,6 +37,10 @@
                 var location = prompt("Whatcha Looking for?");
                 var text = confirm("Do you want to text me?");
                 var modifiedLocation = "http://www.google.com/search?q=" + location + "&btnI";
+            } else if (person == 'hazel') {
+                var location = prompt("Hey cutie <3, whatcha looking for (Hint - lookup anything)");
+                var text = confirm("Do you want to text me?");
+                var modifiedLocation = "http://www.google.com/search?q=" + location + "&btnI";
             }
             var body = document.body
             body.innerHTML += `
@@ -68,7 +72,7 @@
              displayButton.style.display = "block";
             }
             if (text) {
-                sendSms(person);
+             sendSms(person);
             }
         }
     </script>
